@@ -1,0 +1,28 @@
+
+<!-- 1.event binding -->
+
+<!-- <div class="form-group">
+    <label for="">Product Search</label>
+    <input type="text" class="form-control mb-4" (input)="onProductSearch($event)" >
+</div> -->
+
+<!-- 2. two way data binding -->
+
+<!-- <div  [ngStyle]="{backgroundColor : getBgColor()}"> -->
+<div>
+    <div class="form-group">
+        <label for="">Product Search</label>
+        <input type="text" class="form-control mb-4" [(ngModel)] = "searchProductName" >
+    </div>
+    <p class="text-muted" [innerHTML]="searchProductName" >
+       
+    </p>
+    
+    <button class="btn btn-primary mb-4" [disabled]="isDisabled" (click)="getProductStatus()">Add to Cart </button>
+    <button class="btn btn-primary mb-4 float-right" [disabled]="isDisabledremove" (click)="removeProductStatus()">Remove </button>
+    
+    <p class="alert alert-info">{{productStatus}}</p>
+    
+    <button class="btn btn-danger mb-4 float-right" [disabled]="isDisableddelete" (click)="emptyProductStatus()"> Empty </button>
+    
+</div>
